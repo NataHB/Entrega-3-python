@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        {% extends 'mi_app/index.html' %}
+        {% load static %}
+        {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <div class="cta-inner bg-faded text-center rounded" style="display: flex; flex-direction: column; font-family: system-ui, -apple-system; padding: 10px;" >
+                        <div class="BUSCADOR">
+                            <form action="" method="GET">
+                                <input type="text" 
+                                    name="nombre" 
+                                    placeholder="Buscar por categoría" 
+                                    id="nombre">
+                                <input type="submit" value="Buscar" style="background-color: #2F170F; color: white; border-radius: 18px; border: none; padding: 5px 10px">
+                            </form>
+                        </div>
+                        <div class="RESULTADO">
+                            {% if categorias %}
+                            <ul>
+                                {% for categoria in categorias %}
+                                <li style="list-style: none">{{ categoria.nombre }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p>Busca una categoria existente</p>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        
+        
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-5 d-flex ms-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Bebidas</span>
+                                <span class="section-heading-lower">Cafe & Infuciones</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="../../static/mi_app/assets/img/products-01.jpg" alt="..." />
+                    <div class="product-item-description d-flex me-auto">
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">Estamos orgullosos de nuestro trabajo y se nota. Cada vez que nos pide una bebida, le garantizamos que será una experiencia que valdrá la pena vivir. Ya sea nuestro mundialmente famoso capuchino venezolano, un refrescante té de hierbas helado o algo tan simple como una taza de café negro especial, volverá por más.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="product-item-title d-flex">
+                        <div class="bg-faded p-5 d-flex me-auto rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Delicias y buena comida</span>
+                                <span class="section-heading-lower">Pasteleria & Cocina</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="../../static/mi_app/assets/img/products-02.jpg" alt="..." />
+                    <div class="product-item-description d-flex ms-auto">
+                        <div class="bg-faded p-5 rounded"><p class="mb-0">Nuestro menú de temporada incluye deliciosos refrigerios, productos horneados e incluso comidas completas perfectas para el desayuno o el almuerzo. Obtenemos nuestros ingredientes de granjas orgánicas locales siempre que sea posible, junto con proveedores premium de productos especiales.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </body>
+</html>

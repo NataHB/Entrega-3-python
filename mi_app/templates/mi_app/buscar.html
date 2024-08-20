@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        {% extends 'mi_app/index.html' %}
+        {% load static %}
+        {% block content %}
+        <!-- Navigation-->
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-5">
+                                <span class="section-heading-upper">TU OPINION</span>
+                                <span class="section-heading-lower">NOS IMPORTA</span>
+                            </h2>
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <h2>Tus datos</h2>
+                                {{ cliente_form.as_p }}
+                            
+                                <h2>Producto que agregarias</h2>
+                                {{ producto_form.as_p }}
+                            
+                                <h2>En que categoria estaria</h2>
+                                {{ categoria_form.as_p }}
+                            
+                                <button type="submit">Enviar</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
+    </body>
+</html>
